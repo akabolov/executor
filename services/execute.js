@@ -1,12 +1,7 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-
-const executeCommand = promisify(exec);
+import { executeCommand } from '../helpers/promisifiedExec.js';
 
 export const executeService = async (command) => {
-  try {
-    const { stdout, stderr } = await executeCommand(command);
+  const { stdout } = await executeCommand(command);
 
-    return stdout;
-  } catch (error) {}
+  return stdout;
 };
