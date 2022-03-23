@@ -4,7 +4,7 @@ import { errorMiddleware } from './helpers/errorMiddleware.js';
 import executeRouter from './routes/execute.js';
 import { initDb } from './database/init.js';
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 7070;
 
 app.use(express.json());
