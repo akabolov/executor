@@ -1,6 +1,11 @@
 import request from 'supertest';
+import mongoose from 'mongoose';
 
 import { app } from '../../app.js';
+
+afterAll(() => {
+  mongoose.connection.close();
+});
 
 describe('POST /command', () => {
   it('Should return command execution result', async () => {
